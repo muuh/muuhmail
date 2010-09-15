@@ -13,7 +13,7 @@ class MailService : public QObject
 public:
     explicit MailService(QObject *parent = 0);
 
-    /*QList<Mail> getMailsOfInbox();*/
+    QList<Mail*> getMailsOfInbox();
 
 signals:
 
