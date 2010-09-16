@@ -2,9 +2,9 @@
 #define MAINPANEL_H
 
 #include <QWidget>
-#include "MMLayout.h"
+#include "mmlayout.h"
 
-enum MainPanelPosition{
+enum MPPosition{
     CENTER = 1,
     MAIL_PREV_OUTER_LEFT = 2,
     MAIL_PREV_INNER_LEFT = 3,
