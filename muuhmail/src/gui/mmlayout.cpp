@@ -1,4 +1,4 @@
-#include "MMLayout.h"
+#include "mmlayout.h"
 
 MMLayout::~MMLayout()
 {

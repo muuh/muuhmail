@@ -12,7 +12,6 @@
 #define PREV_HEIGHT_FACTOR = 3d/18d
 #define SEARCH_WIDTH_FACTOR = 5d/16
 
-
 class MMLayout : public QLayout
 {
 public:
