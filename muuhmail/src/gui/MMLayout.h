@@ -3,21 +3,15 @@
 
 #include <QLayout>
 
-enum MMLayoutPosition{
-    CENTER = 1,
-    MAIL_PREV_OUTER_LEFT = 2,
-    MAIL_PREV_INNER_LEFT = 3,
-    MAIL_PREV_CENTER = 4,
-    MAIL_PREV_INNER_RIGHT = 5,
-    MAIL_PREV_OUTER_RIGHT = 6,
-    DOCK_LEFT_TOP = 7,
-    DOCK_LEFT_MIDDLE = 8,
-    DOCK_LEFT_BOTTOM = 9,
-    DOCK_RIGHT_TOP = 10,
-    DOCK_RIGHT_MIDDLE = 11,
-    DOCK_RIGHT_BOTTOM = 12,
-    SEARCH_FIELD = 13,
-};
+#define CENTER_WIDTH_FACTOR = 0.5d
+#define CENTER_HEIGHT_FACTOR = 13d/18d
+#define DOCKLET_WIDTH_FACTOR = 3d/16d
+#define DOCKLET_HEIGHT_FACTOR = 2d/9d
+#define DOCKLET_SPACEING_FACTOR
+#define PREV_WIDTH_FACTOR = DOCKLET_WIDTH_FACTOR
+#define PREV_HEIGHT_FACTOR = 3d/18d
+#define SEARCH_WIDTH_FACTOR = 5d/16
+
 
 class MMLayout : public QLayout
 {
@@ -32,6 +26,7 @@ public:
     QLayoutItem *itemAt(int) const;
     QLayoutItem *takeAt(int);
     void setGeometry(const QRect &rect);
+    int count() const;
 
 private:
     QList<QLayoutItem*> list;

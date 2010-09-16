@@ -13,13 +13,13 @@ MuuhMainWindow::~MuuhMainWindow()
 
 void MuuhMainWindow::initialize()
 {
-    mdiArea = new QMdiArea(this);
-    setCentralWidget(mdiArea);
+    mainPanel = new MainPanel(this);
+    setCentralWidget(mainPanel);
 
-    addDocklet(new Docklet(mdiArea));
+   // addDocklet(new Docklet(mainPanel));
 }
 
 void MuuhMainWindow::addDocklet(Docklet *docklet)
 {
-    mdiArea->addSubWindow(docklet);
+
 }

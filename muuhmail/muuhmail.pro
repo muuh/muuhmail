@@ -13,9 +13,11 @@ TEMPLATE = app
 SOURCES += src/gui/muuhmainwindow.cpp \
     src/gui/main.cpp \
     src/gui/docklet.cpp \
-    src/gui/MMLayout.cpp
+    src/gui/MMLayout.cpp \
+    src/gui/mainpanel.cpp
 
 HEADERS  += \
     src/gui/muuhmainwindow.h \
     src/gui/docklet.h \
-    src/gui/MMLayout.h
+    src/gui/MMLayout.h \
+    src/gui/mainpanel.h
