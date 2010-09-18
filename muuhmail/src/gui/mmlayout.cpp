@@ -1,4 +1,7 @@
 #include "mmlayout.h"
+#include "iostream"
+
+using namespace std;
 
 MMLayout::~MMLayout()
 {
@@ -10,7 +13,7 @@ MMLayout::~MMLayout()
 
 int MMLayout::count() const
 {
-    list.size();
+    return list.size();
 }
 
 void MMLayout::addItem(QLayoutItem *item)
@@ -66,14 +69,44 @@ void MMLayout::setGeometry(const QRect &rect)
     {
         return;
     }
-    list.at(0)->setGeometry(QRect(100,100,300,300));
+    list.at(CENTER)->setGeometry(getCentralRect(rect));
+    list.at(MAIL_PREV_OUTER_LEFT)->setGeometry(getPreviewOuterLeftRect(rect));
+    list.at(MAIL_PREV_INNER_LEFT)->setGeometry(getPreviewInnerLeftRect(rect));
 
-
+    cout << "size:" << rect.width() << ":" << rect.height() << endl;
+    cout.flush();
 }
 
+QRect MMLayout::getCentralRect(const QRect &rect)
+{
+    int y = rect.height() * CENTER_Y_POS_FACTOR;
+    int width = rect.width() * CENTER_WIDTH_FACTOR;
+    int x = (rect.width() - width) / 2;
+    int height = rect.height() - y - SEARCH_HEIGHT;
 
+    cout << "central: x="<<x<<"y="<<y<<"w="<<width<<"h="<<height<<endl;
+    return QRect(x,y,width,height);
+}
 
+QRect MMLayout::getPreviewOuterLeftRect(const QRect &rect)
+{
+    int width = rect.width() * PREV_WIDTH_FACTOR;
+    int height = rect.height() * PREV_HEIGHT_FACTOR;
 
+    cout << "outerleft: x="<<0<<"y="<<0<<"w="<<width<<"h="<<height<<endl;
+    return QRect(0,0,width,height);
+}
+
+QRect MMLayout::getPreviewInnerLeftRect(const QRect &rect)
+{
+    int x = rect.width() * PREV_LEFT_IPOS_FACTOR;
+    int y = rect.height() * PREV_INNER_Y_FACTOR;
+    int width = rect.width() * PREV_WIDTH_FACTOR;
+    int height = rect.height() * PREV_HEIGHT_FACTOR;
+
+    cout << "outerleft: x="<<x<<"y="<<y<<"w="<<width<<"h="<<height<<endl;
+    return QRect(x,y,width,height);
+}
 
 
 
