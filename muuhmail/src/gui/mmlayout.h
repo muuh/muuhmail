@@ -19,8 +19,8 @@ enum MPPosition{
     MAIL_PREV_OUTER_LEFT = 0,
     MAIL_PREV_INNER_LEFT = 1,
     MAIL_PREV_CENTER = 2,
-    MAIL_PREV_INNER_RIGHT = 3,
-    MAIL_PREV_OUTER_RIGHT = 4,
+    MAIL_PREV_OUTER_RIGHT = 3,
+    MAIL_PREV_INNER_RIGHT = 4,
     CENTER = 5,
     DOCK_LEFT_TOP = 6,
     DOCK_LEFT_MIDDLE = 7,
@@ -52,8 +52,8 @@ private:
     QRect getCentralRect(const QRect&);
     QRect getPreviewOuterLeftRect(const QRect&);
     QRect getPreviewInnerLeftRect(const QRect&);
-
-
+    QRect getPreviewInnerRightRect(const QRect&);
+    QRect getPreviewOuterRightRect(const QRect&);
 };
 
 #endif // MMLAYOUT_H
