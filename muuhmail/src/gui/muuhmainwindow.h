@@ -2,8 +2,9 @@
 #define MUUHMAINWINDOW_H
 
 #include <QtGui/QMainWindow>
-#include <QMdiArea>
+#include <QFrame>
 #include "docklet.h"
+#include "mainpanel.h"
 
 class MuuhMainWindow : public QMainWindow
 {
@@ -18,7 +19,7 @@ private:
     void initialize();
     void addDocklet(Docklet *docklet);
 
-    QMdiArea *mdiArea;
+    MainPanel *mainPanel;
 
 
 };
