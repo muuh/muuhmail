@@ -11,9 +11,6 @@ class Docklet : public QWidget
 public:
     explicit Docklet(QWidget *parent = 0);
 
-private:
-    void initialize();
-
 signals:
 
 public slots:
