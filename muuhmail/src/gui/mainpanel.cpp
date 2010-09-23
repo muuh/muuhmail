@@ -1,6 +1,6 @@
 #include "mainpanel.h"
 #include <QPushButton>
-#include "docklet.h"
+#include "docklets/docklet.h"
 
 MainPanel::MainPanel(QWidget *parent) : QWidget(parent)
 {

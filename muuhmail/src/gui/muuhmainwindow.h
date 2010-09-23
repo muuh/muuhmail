@@ -3,7 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <QFrame>
-#include "docklet.h"
+#include "docklets/docklet.h"
 #include "mainpanel.h"
 
 class MuuhMainWindow : public QMainWindow
