@@ -17,7 +17,8 @@ SOURCES += src/gui/muuhmainwindow.cpp \
     src/model/contact.cpp \
     src/model/mail.cpp \
     src/core/mailservice.cpp \
-    src/gui/docklets/docklet.cpp
+    src/gui/docklets/docklet.cpp \
+    src/gui/docklets/emailviewerdocklet.cpp
 
 HEADERS  += \
     src/gui/muuhmainwindow.h \
@@ -26,7 +27,8 @@ HEADERS  += \
     src/core/mailservice.h \
     src/model/contact.h \
     src/model/mail.h \
-    src/gui/docklets/docklet.h
+    src/gui/docklets/docklet.h \
+    src/gui/docklets/emailviewerdocklet.h
  
 
 OTHER_FILES +=

@@ -8,11 +8,6 @@ EmailViewerDocklet::EmailViewerDocklet(QWidget *parent) :
         Docklet(parent)
 {
     layoutComponents();
-
-    MailService *service = new MailService();
-    QList<Mail*> list = service->getMailsOfInbox();
-
-    changeEmailContent(list.value(0));
 }
 
 EmailViewerDocklet::~EmailViewerDocklet()
