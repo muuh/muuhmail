@@ -1,7 +1,6 @@
 #include "mail.h"
 
-Mail::Mail(QString subject, QString textContent, QString sender, QList<QString> recipients, QObject *parent) :
-    QObject(parent)
+Mail::Mail(QString subject, QString textContent, QString sender, QList<QString> recipients)
 {
     this->subject = subject;
     this->textContent = textContent;

@@ -4,11 +4,10 @@
 #include <QObject>
 #include "contact.h"
 
-class Mail : public QObject
+class Mail
 {
-    Q_OBJECT
 public:
-    explicit Mail(QString subject, QString textContent, QString sender, QList<QString> recipients, QObject *parent = 0);
+    explicit Mail(QString subject, QString textContent, QString sender, QList<QString> recipients);
     QString getSubject();
     QString getTextContent();
     QString getSender();
@@ -18,10 +17,7 @@ private:
     QString textContent;
     QString sender;
     QList<QString> recipients;
-signals:
-
-public slots:
-
+    int mailId;
 };
 
 #endif // MAIL_H

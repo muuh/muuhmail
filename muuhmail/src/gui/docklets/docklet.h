@@ -9,7 +9,10 @@ class Docklet : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Docklet(QWidget *parent = 0);
+    Docklet(QWidget *parent = 0);
+private:
+    virtual void layoutComponents();
+    virtual void buildComponents();
 
 signals:
 

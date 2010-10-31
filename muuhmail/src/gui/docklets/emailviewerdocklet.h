@@ -3,6 +3,7 @@
 
 #include "docklet.h"
 #include "src/model/mail.h"
+#include "src/core/mailservice/mailservice.h"
 #include <QTextBrowser>
 #include <QLineEdit>
 
@@ -22,6 +23,7 @@ private:
     QLineEdit *leSender;
 
     void layoutComponents();
+    void buildComponents();
 };
 
 #endif // EMAILVIEWERDOCKLET_H

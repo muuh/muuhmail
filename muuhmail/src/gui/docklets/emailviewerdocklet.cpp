@@ -1,5 +1,4 @@
 #include "emailviewerdocklet.h"
-#include "src/core/mailservice.h"
 #include <iostream>
 
 using namespace std;
@@ -7,6 +6,7 @@ using namespace std;
 EmailViewerDocklet::EmailViewerDocklet(QWidget *parent) :
         Docklet(parent)
 {
+    buildComponents();
     layoutComponents();
 }
 
@@ -24,10 +24,8 @@ void EmailViewerDocklet::changeEmailContent(Mail *mail)
     leSender->setText(mail->getSender());
 }
 
-void EmailViewerDocklet::layoutComponents()
+void EmailViewerDocklet::buildComponents()
 {
-    QGridLayout *layout = new QGridLayout(this);
-
     tbEmailContent = new QTextBrowser();
 
     leSubject = new QLineEdit();
@@ -35,6 +33,11 @@ void EmailViewerDocklet::layoutComponents()
 
     leSender = new QLineEdit();
     leSender->setReadOnly(true);
+}
+
+void EmailViewerDocklet::layoutComponents()
+{
+    QGridLayout *layout = new QGridLayout(this);
 
     layout->addWidget(leSender, 1, 0);
     layout->addWidget(leSubject, 2, 0);

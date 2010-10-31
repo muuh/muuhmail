@@ -3,20 +3,15 @@
 
 #include <QObject>
 
-class Contact : public QObject
+class Contact
 {
-    Q_OBJECT
 public:
-    explicit Contact(QObject *parent = 0);
+    explicit Contact();
     QString getName();
     QString getMailAddress();
 private:
     QString name;
     QString mailAddress;
-signals:
-
-public slots:
-
 };
 
 #endif // CONTACT_H
