@@ -11,7 +11,7 @@ class EmailViewerDocklet : public Docklet
 {
     Q_OBJECT
 public:
-    EmailViewerDocklet(QWidget *parent = 0);
+    EmailViewerDocklet(MainPanel *parent = 0);
     ~EmailViewerDocklet();
 
 public slots:

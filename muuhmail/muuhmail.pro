@@ -4,7 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
+QT += network
+QT += webkit
 
 TARGET = muuhmail
 TEMPLATE = app

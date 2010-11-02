@@ -1,9 +1,10 @@
 #include "emailviewerdocklet.h"
 #include <iostream>
+#include "src/core/mailservice/pop3mailservice.h"
 
 using namespace std;
 
-EmailViewerDocklet::EmailViewerDocklet(QWidget *parent) :
+EmailViewerDocklet::EmailViewerDocklet(MainPanel *parent) :
         Docklet(parent)
 {
     buildComponents();
@@ -33,6 +34,14 @@ void EmailViewerDocklet::buildComponents()
 
     leSender = new QLineEdit();
     leSender->setReadOnly(true);
+
+    Pop3MailService *mailservice = new Pop3MailService();
+    MainPanel *mainPanel = getMainPanel();
+
+    QAction *action = new QAction(tr("getEmail"), mainPanel);
+    connect(action, SIGNAL(triggered()), mailservice, SLOT(openConnection()));
+
+    mainPanel->addActionToToolbar(action);
 }
 
 void EmailViewerDocklet::layoutComponents()

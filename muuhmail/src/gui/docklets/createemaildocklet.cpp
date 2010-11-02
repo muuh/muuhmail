@@ -1,6 +1,6 @@
 #include "createemaildocklet.h"
 
-CreateEmailDocklet::CreateEmailDocklet(QWidget *parent) :
+CreateEmailDocklet::CreateEmailDocklet(MainPanel *parent) :
         Docklet(parent)
 {
     buildComponents();

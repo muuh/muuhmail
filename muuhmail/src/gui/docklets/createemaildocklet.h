@@ -9,7 +9,7 @@
 class CreateEmailDocklet : public Docklet
 {
 public:
-    CreateEmailDocklet(QWidget *parent = 0);
+    CreateEmailDocklet(MainPanel *parent = 0);
     ~CreateEmailDocklet();
 
 private:
