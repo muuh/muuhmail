@@ -16,8 +16,8 @@ public:
 private:
     MainPanel *mainPanel;
 
-    virtual void layoutComponents();
-    virtual void buildComponents();
+    virtual void layoutComponents() = 0;
+    virtual void buildComponents() = 0;
 
 signals:
 

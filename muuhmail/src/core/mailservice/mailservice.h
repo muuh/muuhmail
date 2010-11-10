@@ -14,13 +14,12 @@ class MailService : public QObject
 {
     Q_OBJECT
 public:
-
-    /**
-     * create a new MailService to delete and get mails,
-     * as well as mailbox and status
-     *
-     **/
-    MailService(QObject *parent = 0);
+   /**
+    * create a new MailService to delete and get mails,
+    * as well as mailbox and status
+    *
+    **/
+    MailService(QObject *parent = 0) : QObject(parent){}
 
     /**
      * get all mails of the given mailbox
@@ -28,7 +27,7 @@ public:
      *
      * @param mailbox to load the mails from
      **/
-    QList<Mail*> getMailsOfMailbox(MailBox mailbox);
+    virtual QList<Mail*> getMailsOfMailbox(MailBox mailbox) = 0;
 
     /**
      * get all mailheaders of given mailbox
@@ -36,7 +35,7 @@ public:
      *
      * @param mailbox to load the mailheaders from
      **/
-    QList<MailHeader*> getMailHeadersOfMailbox(MailBox mailbox);
+    virtual QList<MailHeader*> getMailHeadersOfMailbox(MailBox mailbox) = 0;
 
     /**
      * get the mail of given mailheader
@@ -44,7 +43,7 @@ public:
      *
      * @param mailheader of mail to laod
      **/
-    Mail* getMailsOfHeader(MailHeader*);
+    virtual Mail* getMailsOfHeader(MailHeader*) = 0;
 
     /**
      * send the mails of the given list
@@ -52,14 +51,14 @@ public:
      * @return true if it was successful, false instaed. Notice to delete
      *   given mails
      **/
-    bool sendMails(QList<Mail*> listOfMails);
+    virtual bool sendMails(QList<Mail*> listOfMails) = 0;
 
     /**
      * get all mailboxes from server if it contains, empty list
      * if there are no mailboxes e.g. on POP3
      *
      **/
-    QList<MailBox*> getMailboxes();
+    virtual QList<MailBox*> getMailboxes() = 0;
 
     /**
      * delete all mails. they are identify with the private member mailId
@@ -67,14 +66,14 @@ public:
      * @return true if it was successful, false instead. Notice to delete
      *   given mails.
      **/
-    bool deleteMails(QList<Mail*> deletedMails);
+    virtual bool deleteMails(QList<Mail*> deletedMails) = 0;
 
     /**
      * get the MailBoxStatus of the given MailBoxes. The status contains information
      * like number of mails, size etc.
      *
      **/
-    QMap<MailBox*, MailBoxStatus*> getMailBoxStatus(QList<MailBox*> listOfMailBoxes);
+    virtual QMap<MailBox*, MailBoxStatus*> getMailBoxStatus(QList<MailBox*> listOfMailBoxes) = 0;
 
 signals:
 

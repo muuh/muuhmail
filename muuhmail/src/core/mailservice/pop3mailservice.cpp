@@ -33,6 +33,18 @@ QList<Mail*> MailService::getMailsOfMailbox(MailBox mailbox)
     return result;
 }
 
+QList<MailHeader*> getMailHeadersOfMailbox(MailBox mailbox) {}
+
+Mail* getMailsOfHeader(MailHeader*) {}
+
+bool sendMails(QList<Mail*> listOfMails) {}
+
+QList<MailBox*> getMailboxes() {}
+
+bool deleteMails(QList<Mail*> deletedMails) {}
+
+QMap<MailBox*, MailBoxStatus*> getMailBoxStatus(QList<MailBox*> listOfMailBoxes) {}
+
 
 /**
  * the openConnection() method opens a connection. after that

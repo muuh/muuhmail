@@ -19,6 +19,14 @@ public:
     explicit Pop3MailService(QObject *parent = 0);
     ~Pop3MailService();
 
+    QList<Mail*> getMailsOfMailbox(MailBox mailbox){}
+    QList<MailHeader*> getMailHeadersOfMailbox(MailBox mailbox) {}
+    Mail* getMailsOfHeader(MailHeader*) {}
+    bool sendMails(QList<Mail*> listOfMails) {}
+    QList<MailBox*> getMailboxes() {}
+    bool deleteMails(QList<Mail*> deletedMails) {}
+    QMap<MailBox*, MailBoxStatus*> getMailBoxStatus(QList<MailBox*> listOfMailBoxes) {}
+
 signals:
 
 public slots:

@@ -11,11 +11,16 @@ MainPanel::MainPanel(QMainWindow *parent) : QWidget(parent)
 
     layout = new MMLayout(this);
 
-    layout->addWidget(new Docklet(this));
-    layout->addWidget(new Docklet(this));
-    layout->addWidget(new Docklet(this));
-    layout->addWidget(new Docklet(this));
-    layout->addWidget(new Docklet(this));
+//    layout->addWidget(new Docklet(this));
+//    layout->addWidget(new Docklet(this));
+//    layout->addWidget(new Docklet(this));
+//    layout->addWidget(new Docklet(this));
+//    layout->addWidget(new Docklet(this));
+    layout->addWidget(new EmailViewerDocklet(this));
+    layout->addWidget(new EmailViewerDocklet(this));
+    layout->addWidget(new EmailViewerDocklet(this));
+    layout->addWidget(new EmailViewerDocklet(this));
+    layout->addWidget(new EmailViewerDocklet(this));
     layout->addWidget(new EmailViewerDocklet(this));
 //    layout->addWidget(new Docklet(this));
 //    layout->addWidget(new Docklet(this));

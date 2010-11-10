@@ -29,8 +29,7 @@ SOURCES += src/gui/muuhmainwindow.cpp \
     src/core/configservice/configservice.cpp \
     src/model/config/mailaccountconfig.cpp \
     src/model/config/applicationconfig.cpp \
-    src/model/config/globalsettingsconfig.cpp \
-    src/core/mailservice/mailservice.cpp
+    src/model/config/globalsettingsconfig.cpp
 
 HEADERS  += \
     src/gui/muuhmainwindow.h \
